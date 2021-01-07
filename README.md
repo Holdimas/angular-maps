@@ -20,7 +20,7 @@ Install via npm:
     npm install --save angular11-maps
 ```
 # Use
-To use angular11-maps with the default Bing Map implementation, follow steps provided at original NPM [package](https://www.npmjs.com/package/angular-maps)
+To use angular11-maps with the default Bing Map implementation, follow steps provided at original [NPM package](https://www.npmjs.com/package/angular-maps)
 
 # Samples and Latest Updates
  You can find various basic and advanced samples in the [Wiki Sample Page](https://github.com/infusion-code/angular-maps/wiki/Samples)
