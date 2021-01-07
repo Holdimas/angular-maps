@@ -1,6 +1,6 @@
 {
-  "name": "angular-maps-v9",
-  "version": "6.0.9",
+  "name": "angular11-maps",
+  "version": "6.0.11",
   "description": "Angular Maps (X-Map) is a set of components and services to provide map functionality in angular 2+ apps. X-Maps architecture is provider independent and can be used with Bing, Google, ESRI or any other service enabled mapping provider. X-Map contains a default implementation for Bing Maps.",
   "homepage": "https://github.com/infusion-code/angular-maps/wiki",
   "bugs": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Holdimas/angular-maps"
+    "url": "https://github.com/infusion-code/angular-maps"
   },
   "main": "./dist/index.js",
   "scripts": {
