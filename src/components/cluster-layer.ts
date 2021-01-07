@@ -15,6 +15,7 @@ import { MapLayerDirective } from './map-layer';
 
 /**
  *
+ * 
  * Creates a cluster layer on a {@link MapComponent}.
  *
  * ### Example
