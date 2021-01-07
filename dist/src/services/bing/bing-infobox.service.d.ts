@@ -1,0 +1,95 @@
+import { NgZone } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IInfoWindowOptions } from '../../interfaces/iinfo-window-options';
+import { ILatLong } from '../../interfaces/ilatlong';
+import { InfoBoxService } from '../infobox.service';
+import { MapService } from '../../services/map.service';
+import { InfoBoxComponent } from '../../components/infobox';
+/**
+ * Concrete implementation of the {@link InfoBoxService} contract for the Bing Maps V8 architecture.
+ *
+ * @export
+ */
+export declare class BingInfoBoxService implements InfoBoxService {
+    private _mapService;
+    private _zone;
+    private _boxes;
+    /**
+     * Creates an instance of BingInfoBoxService.
+     * @param _mapService - Concrete {@link MapService} implementation for Bing Maps V8. An instance of {@link BingMapService}.
+     * @param _zone - An instance of NgZone to provide zone aware promises.
+     *
+     * @memberof BingInfoBoxService
+     */
+    constructor(_mapService: MapService, _zone: NgZone);
+    /**
+     * Adds an info window to the map or layer.
+     *
+     * @param info - {@link InfoBoxComponent} component object representing the infobox.
+     *
+     * @memberof BingInfoBoxService
+     */
+    AddInfoWindow(info: InfoBoxComponent): void;
+    /**
+     * Closes an InfoBoxComponent that is open.
+     *
+     * @abstract
+     * @param info - {@link InfoBoxComponent} component object representing the infobox.
+     * @returns - A promise that is fullfilled when the infobox has been closed.
+     *
+     * @memberof InfoBoxService
+     */
+    Close(info: InfoBoxComponent): Promise<void>;
+    /**
+     * Registers an event delegate for an info window.
+     *
+     * @param eventName - The name of the event to register (e.g. 'click')
+     * @param infoComponent - The {@link InfoBoxComponent} for which to register the event.
+     * @returns - Observable emiting an instance of T each time the event occurs.
+     *
+     * @memberof GoogleInfoBoxService
+     */
+    CreateEventObservable<T>(eventName: string, infoComponent: InfoBoxComponent): Observable<T>;
+    /**
+     * Deletes an infobox.
+     *
+     * @abstract
+     * @param info - {@link InfoBoxComponent} component object representing the infobox.
+     * @returns - A promise that is fullfilled when the infobox has been deleted.
+     *
+     * @memberof InfoBoxService
+     */
+    DeleteInfoWindow(info: InfoBoxComponent): Promise<void>;
+    /**
+     * Opens an infobox that is closed.
+     *
+     * @abstract
+     * @param info - {@link InfoBoxComponent} component object representing the infobox.
+     * @returns - A promise that is fullfilled when the infobox has been opened.
+     *
+     * @memberof InfoBoxService
+     */
+    Open(info: InfoBoxComponent, loc?: ILatLong): Promise<void>;
+    /**
+     * Sets the infobox options.
+     *
+     * @abstract
+     * @param info - {@link InfoBoxComponent} component object representing the infobox.
+     * @param options - {@link IInfoWindowOptions} object containing the options to set. Options provided are
+     * merged with the existing options of the underlying infobox.
+     * @returns - A promise that is fullfilled when the infobox options have been updated.
+     *
+     * @memberof InfoBoxService
+     */
+    SetOptions(info: InfoBoxComponent, options: IInfoWindowOptions): Promise<void>;
+    /**
+     * Set the position of the infobox based on the properties set on the InfoBox component.
+     *
+     * @abstract
+     * @param info - {@link InfoBoxComponent} component object representing the infobox.
+     * @returns - A promise that is fullfilled when the infobox position has been updated.
+     *
+     * @memberof InfoBoxService
+     */
+    SetPosition(info: InfoBoxComponent): Promise<void>;
+}
